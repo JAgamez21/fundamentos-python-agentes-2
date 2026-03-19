@@ -43,8 +43,48 @@ print(f"Notas después de extend: {notas}")
 
 #TO-DO
 # ¿Cómo agregar elementos a una lista en una posición específica?
+
+#insert() >> Agrega un elemento en una posición específica
+print(f"Notas antes de insert: {notas}")
+notas.insert(2, 77) # Agrega 77 en la posición 2
+print(f"Notas después de insert: {notas}")
+
 # Otras funciones para usar en las listas
+
+#reverse() >> Invierte el orden de los elementos de la lista
+print(f"Notas antes de reverse: {notas}")
+notas.reverse()
+print(f"Notas después de reverse: {notas}")
+
+#count() >> Cuenta cuántas veces aparece un elemento en la lista
+print(f"Notas: {notas}")
+print(f"El número 85 aparece {notas.count(85)} veces en la lista")
+
+#index() >> Devuelve el índice de la primera aparición de un elemento en la lista
+print(f"Notas: {notas}")
+print(f"El índice de la primera aparición de 85 es {notas.index(85)}")
+
+#remove() >> Elimina la primera aparición de un elemento en la lista
+print(f"Notas antes de remove: {notas}")
+notas.remove(85)
+print(f"Notas después de remove: {notas}")
+
+#pop() >> Elimina y devuelve el elemento en una posición específica
+print(f"Notas antes de pop: {notas}")
+notas.pop(2) # Elimina el elemento en la posición 2
+print(f"Notas después de pop: {notas}")
+
+#clear() >> Elimina todos los elementos de la lista
+print(f"Notas antes de clear: {notas}")
+notas.clear()
+print(f"Notas después de clear: {notas}")
+
 # ¿Cómo ordenamos una lista?
+
+#sort() >> Ordena los elementos de la lista
+print(f"Notas antes de sort: {notas}")
+notas.sort()
+print(f"Notas después de sort: {notas}")
 
 ###Diccionarios: { } - par clave-valor
 estudiantes = {"M0421": "Julian Agamez", "M0422": "Camila Rojas", "M0423": "Sofia Vargas"}
@@ -61,6 +101,10 @@ print(f"Calificaciones de M0421: {estudiantes['M0421']}")
 print(f"Calificaciones de M0422: {estudiantes.get('M0422')}")
 
 #TO-DO: .keys(), .values(), ...
+
+print(f"Claves de estudiantes: {estudiantes.keys()}")
+print(f"Valores de estudiantes: {estudiantes.values()}")
+print(f"Items de estudiantes: {estudiantes.items()}")
 
 #for - listas
 for n in notas: #n en cada vuelta, va a ser un elemento de la lista notas
