@@ -41,12 +41,15 @@ class PseudoAgente:
         self.historial_chat.append(d_log)
 
     def gestionar_historial(self, op: str, rol: str):
+        self.tokens -= 30
+
         if op == "all":
-            return {"result": self.historial_chat, "description": f"[PseudoAgente] Se muestra el historial actual hasta las {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} " }
-                    
+            self.registrar_log("historial " + op, rol, f"[PseudoAgente] Se muestra el historial actual hasta las {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ")
+            return self.historial_chat
         if op == "clear":
-            self.historial_chat = []
-            return {"result": self.historial_chat, "description": f"[PseudoAgente] Se borró el historial actual a las {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} " }
+            self.registrar_log("historial " + op, rol, f"[PseudoAgente] Se borró el historial actual a las {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ")
+            self.historial_chat.clear()
+            return self.historial_chat
 
 #TO-DO 1: Función para validar el acceso
 def login(user, passwrd):
